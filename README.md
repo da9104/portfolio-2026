@@ -1,73 +1,27 @@
-# React + TypeScript + Vite
+*This is a submission for the [New Year, New You Portfolio Challenge Presented by Google AI](https://dev.to/challenges/new-year-new-you-google-ai-2025-12-31)*
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## About Me
+Hi everyone! I am Dami, a web developer with 2 years of experience. I'm an AI enthusiast, and I recently built a React/Expo app powered by Google Gemini Pro. This project was especially fun because I drew my character and using Nano banana to create an animated character that brings a good web experience for my portfolio. 
 
-Currently, two official plugins are available:
+## Portfolio
+[Portfolio URL](https://portfolio-app-277646579190.us-central1.run.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/c9itl30zfj866wo9i4ot.png)
 
-## React Compiler
+## How I Built It
+I built this project with Google AI tools like Antigravity and Gemini Pro, The character and image stuff was made with Google Nano banana and Veo3. Everything was made by Google AI stuff, Here's how I did:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. I used Nano banana with Google Gemini Pro to generate the characters, background images and other visual stuff 
+2. I refined those assets in [Photopea](https://www.photopea.com) to edit advance stuff like background removal and object isolation
+3. To animate the character, I use Google Veo 3 and polished CapCut.
+4. Finally, I containerised the app with Docker to deploy it to Google Cloud Run
 
-## Expanding the ESLint configuration
+## What I'm Most Proud Of
+I first experimented with a macOS‑style UI for my portfolio, but ultimately redesigned it as a room‑themed interface so I could use drag‑and‑drop interactions with the graphics in the space. The room concept works surprisingly well in practice and makes the whole experience feel more playful and interactive.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Main tech stacks
+- Typescript
+- Vite/SSR
+- GSAP for drag & drop animation
+- Notion Client API
+- Docker
