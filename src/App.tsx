@@ -1,5 +1,6 @@
 
 import './App.css'
+import { Analytics } from "@vercel/analytics/next"
 import useWindowStore from "@/store/window";
 import Navbar from "@/components/Navbar";
 import Room from "@/components/Room";
@@ -27,6 +28,7 @@ function App({ initialPosts }: { initialPosts: any[] }) {
   return (
     <main>
       <Navbar />
+      <Analytics />
       <div className="relative w-full h-screen overflow-hidden">
         <Room />
         <Finder />
