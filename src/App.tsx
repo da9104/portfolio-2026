@@ -43,7 +43,7 @@ function App({ initialPosts }: { initialPosts: any[] }) {
         </h1>
         <video
           autoPlay loop muted playsInline
-          className="absolute -bottom-10 md:bottom-0! md:left-1/2 md:-translate-x-1/2 w-[500px] h-[500px] object-cover cursor-pointer"
+          className="absolute bottom-0! md:left-1/2 md:-translate-x-1/2 w-[500px] h-[500px] object-cover cursor-pointer"
           onClick={handleOpenDialog}
         >
           <source
