@@ -62,7 +62,9 @@ const Room = () => {
                         <img
                             src={project.icon}
                             alt={project.name}
-                            className="w-24 h-24" />
+                            className="w-24 h-24"
+                            loading="lazy"
+                            />
                         <p>{project.name}</p>
                     </li>
                 ))}

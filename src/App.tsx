@@ -43,6 +43,7 @@ function App({ initialPosts }: { initialPosts: any[] }) {
         </h1>
         <video
           autoPlay loop muted playsInline
+          poster="/images/dami_character.webp"
           className="absolute md:bottom-0 bottom-10 left-1/2 -translate-x-1/2 w-[500px] h-[500px] object-cover cursor-pointer"
           onClick={handleOpenDialog}
         >
