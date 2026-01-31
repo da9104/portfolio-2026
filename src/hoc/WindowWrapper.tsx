@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import useWindowStore from '@/store/window'
@@ -13,8 +14,15 @@ const WindowWrapper = (Component: ComponentType<any>, windowKey: keyof typeof WI
         const { isOpen, zIndex } = windows[windowKey]
 
         const ref = useRef<HTMLElement>(null)
+        const [mounted, setMounted] = useState(false)
+
+        useEffect(() => {
+            setMounted(true)
+        }, [])
 
         useGSAP(() => {
+            if (!mounted) return
+
             const el = ref.current
             if (!el || !isOpen) return
 
@@ -31,9 +39,11 @@ const WindowWrapper = (Component: ComponentType<any>, windowKey: keyof typeof WI
                 duration: .4,
                 ease: 'power3.out',
             })
-        }, [])
+        }, [mounted, isOpen])
 
         useGSAP(() => {
+            if (!mounted) return
+
             const el = ref.current
             if (!el) return
 
@@ -42,17 +52,24 @@ const WindowWrapper = (Component: ComponentType<any>, windowKey: keyof typeof WI
             })
 
             return () => instance.kill()
-        }, [])
+        }, [mounted])
 
         useLayoutEffect(() => {
+            if (!mounted) return
+
             const el = ref.current
             if (!el) return
 
             el.style.display = isOpen ? "block" : "none";
-        }, [isOpen])
+        }, [isOpen, mounted])
+
+        if (!mounted) {
+            // SSR + first client render: nothing, so no mismatch
+            return null
+        }
 
         return (
-            <section id={windowKey} ref={ref} style={{ zIndex: zIndex }} className='absolute'>
+            <section id={windowKey} ref={ref} style={{ zIndex: zIndex }} className='absolute window'>
                 <Component {...props} />
             </section>
         )
