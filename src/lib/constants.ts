@@ -213,6 +213,12 @@ const photos = [
     subtitle: 'Conducted user acceptance testing and surveys at the university',
     url: "/images/dami4.webp",
   },
+  {
+    id: 7,
+    type: 'image',
+    subtitle: 'it is a picture of me',
+    url: "/images/dami5.webp",
+  },
 ];
 
 export {
@@ -523,12 +529,12 @@ const ABOUT_LOCATION = {
     },
     {
       id: 3,
-      name: "office-me.png",
+      name: "dami5.webp",
       icon: "/images/image.png",
       kind: "file",
       fileType: "img",
       position: "top-52 left-80",
-      imageUrl: "/images/Raees5.jpg",
+      imageUrl: "/images/dami5.webp",
     },
     {
       id: 4,
